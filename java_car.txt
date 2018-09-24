@@ -1,0 +1,56 @@
+定义一个汽车类：
+package my;
+public class Car
+{
+
+	//定义变量
+	public String name="奥迪A6L";//型号
+	public double tank=75;//油箱大小L
+	public double oilConsumption=75;//剩余油量L
+	public double price=32.22;//万
+	public int oilname=95;//汽油型号，号
+	public int number = 10;
+	
+	//加油
+	public double gas(double addtank)
+	{
+		oilConsumption=oilConsumption+addtank;
+		return oilConsumption;
+	}
+	public void run()
+	{
+		if(oilConsumption!=0)
+			System.out.println("能跑");
+		else
+			System.out.println("油量不足");
+	}
+	public void primary()//构造
+	{
+		System.out.println("车名为"+"奥迪A6L");
+		System.out.println("价格为"+32.22+"万元");
+		System.out.println("油箱大小为"+75+"L");
+		System.out.println("剩余油量为"+75+"L");
+		System.out.println("燃油标号为"+95+"号");				
+	}
+在HelloWorld里写主函数：
+package my;
+import java.util.Scanner;
+public class HelloWorld
+{
+
+	public static void main(String[] args)
+	{
+		Scanner in=new Scanner(System.in);
+		Car car=new Car();
+		car.primary();
+		//用户输入一组参数
+		System.out.println("请输入剩余油量");
+		car.oilConsumption=in.nextDouble();
+		System.out.println("剩余油量为"+car.oilConsumption);
+		car.run();
+		System.out.println("加油量为：");
+		double addtank=in.nextDouble();
+		car.gas(addtank);
+		System.out.println("剩余油量"+car.oilConsumption);
+                    }
+}
