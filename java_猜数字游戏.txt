@@ -1,0 +1,83 @@
+package my;
+import java.util.Scanner;
+public class HelloWorld
+{
+
+	public static void main(String[] args)
+	{		
+                                //猜数字游戏
+		//三个玩家：gamer1,gaamer2,gamer3
+		//初始化三个玩家的数字(0-100)
+		int gamer1=0,gamer2=0,gamer3=0;
+		//初始化分数
+		int gamer1count=0,gamer2count=0,gamer3count=0;	
+		for(int i=1;i<=10;i++)
+		{
+			int result=1+(int)(Math.random()*100);
+			System.out.println("第"+i+"回合");
+		//让玩家输入自己猜的数
+		Scanner in=new Scanner(System.in);
+		System.out.print("玩家1输入的数");
+		gamer1=in.nextInt();
+		System.out.print("玩家2输入的数");
+		gamer2=in.nextInt();
+		System.out.print("玩家3输入的数");
+		gamer3=in.nextInt();
+		//比较，共10个回合
+		if(result==gamer1)
+		{
+			gamer1count++;
+				System.out.println("玩家1猜对，积1分,已积"+gamer1count+"分");
+		}
+		else
+		{
+			System.out.println("玩家1猜错，已积"+gamer1count+"分");
+		}
+		if(result==gamer2)
+		{
+			gamer2count++;
+				System.out.println("玩家2猜对，积1分,已积"+gamer2count+"分");
+		}
+		else
+		{
+			System.out.println("玩家2猜错，已积"+gamer2count+"分");
+		}
+		if(result==gamer3)
+		{
+			gamer3count++;
+				System.out.println("玩家3猜对，积1分,已积"+gamer3count+"分");
+		}
+		else
+		{
+			System.out.println("玩家3猜错，已积"+gamer3count+"分");
+		}
+
+		}
+		int max=0;
+		if(gamer1count>max)
+		{
+			max=gamer1count;
+		}
+		if(gamer2count>max)
+		{
+			max=gamer2count;
+		}
+		if(gamer3count>max)
+		{
+			max=gamer3count;
+		}
+		if(max==gamer1count)
+		{
+			System.out.println("游戏结束，玩家1获胜");
+		}
+		if(max==gamer2count)
+		{
+			System.out.println("游戏结束，玩家2获胜");
+		}
+		if(max==gamer3count)
+		{
+			System.out.println("游戏结束，玩家3获胜");
+		}
+                    }
+}
+
