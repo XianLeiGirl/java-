@@ -1,0 +1,25 @@
+package my;
+import java.util.ArrayList;
+import java.util.List;
+public class HelloWorld
+{
+
+	public static void main(String[] args)
+	{
+                       List<Integer> list = new ArrayList<>(1);
+	       Integer integer =new Integer (10);
+	       list.add(integer);
+	       //测试integer是引用的list的地址还是将list中的对象拷贝到integer中
+	       integer = list.get(0);
+	       //先输出integer的值
+	       System.out.println(integer);//结果输出10
+		
+	       //试图改变list集合中的第一个地址的值，观察integer是否会一起改变
+	       list.remove(0);
+	       list.add(new Integer(4));//将原来的10改为了现在的4
+	       //打印list.get(0)的值和integer的值做比较
+	        System.out.println(list.get(0));//输出4
+	        System.out.println(integer);//输出10
+	        //所以list是通过拷贝的方式付给integer
+                    }
+}
